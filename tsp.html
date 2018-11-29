@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TSP Example</title>
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./css/bootstrap.css" >    
+    <link rel="stylesheet" href="./css/tsp.css">
+    <!-- <link rel="stylesheet" href="https://openlayers.org/en/v4.3.1/css/ol.css" type="text/css"> -->
+
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <script src="https://openlayers.org/en/v4.3.1/build/ol.js"></script>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script> -->
+    <script src="./javascripts/bootstrap.min.js" ></script>
+    <script src="../lib/tableau-extensions-latest.js"></script>
+    <script src="./tsp.js"></script>
+
+    <nav class="navbar navbar-dark" style="background-color: #105E9F;">
+        <a class="navbar-brand"><span style="color: #FFFFFF; font-weight: bold">Frontline Systems </span> <span style="color: #D3D3D3"> Route Optimizer</span></a>
+    </nav>
+    <!-- <p class="h2">Frontline Systems Route Optimizer</p> -->
+    <!-- <div class="container text-center" id="welcomeScreen">
+        <h2>Select some customers to visit</h2>
+    </div> -->
+    <!-- <div class="container" id="mainContainer" style="display:none"> -->
+        <div class="row" id="mainContainer">
+          <div id="customers" class="col-lg">
+                <table id="customersTable" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                        <th>Customer</th>
+                        <th>City</th>
+                        <th>Available From</th>
+                        <th>Available Until</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <h2 id="selectMsg" class="text-center">Select some customers to visit</h2>
+          </div>
+          <!-- <div id="mapCol" class="col"> -->
+            <!-- <div id="map" class="map" style="display:none;"></div> -->
+            <!-- <button type="button" id="solve" class="btn btn-primary btn-lg btn-success">Find Optimal Route</button> -->
+            <!-- <input type="button" id="solve" value="Find Optimal Route"> -->
+            <!-- I don't know if the following two are necessary... -->
+            <!-- <div id="objective"></div> -->
+            <!-- <div id="resultBox"></div> -->
+          <!-- </div> -->
+          <div id="itinerary" class="col">
+            
+            <table id="itTable" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Suggested Itinerary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="solveContainer" class="text-center">
+                <button type="button" id="solve" class="btn btn-primary btn-xl btn-success" disabled>Find Optimal Route</button>
+                <div id="solving" style="display:none">
+                    <h3>Solving for Optimal Route</h3>
+                    <div class="spinner">
+                        <div class="cube1"></div>
+                        <div class="cube2"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="dialog" title="Solver" style="display:none;">
+            <p>Unable to solve the model with the required from/to dates.</p>
+        </div>
+    <!-- </div> -->
+
+  </body>
+</html>
